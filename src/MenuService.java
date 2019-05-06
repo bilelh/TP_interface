@@ -2,6 +2,6 @@ import fr.pizzeria.model.Pizza;
 
 public abstract class MenuService {
 
-	public abstract void executeUC (Pizza [] pizza) ;
+	public abstract void executeUC (PizzaMemoDao pizza) ;
 	
 }
