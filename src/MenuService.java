@@ -1,8 +1,7 @@
+import fr.pizzeria.model.Pizza;
 
 public abstract class MenuService {
 
-	public void executeUC () {
-		
-	}
+	public abstract void executeUC (Pizza [] pizza) ;
 	
 }
