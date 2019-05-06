@@ -3,24 +3,25 @@ package fr.pizzeria.console;
 import java.util.Scanner;
 
 import fr.pizzeria.model.Pizza;
+import fr.pizzeria.service.AjouterPizzaService;
+import fr.pizzeria.service.ListerPizzaService;
+import fr.pizzeria.service.MenuService;
+import fr.pizzeria.service.ModifierPizzaService;
+import fr.pizzeria.service.SupprimerPizzaService;
 
 public class PizzeriaAdminConsoleApp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Pizza [] listPizza = new Pizza[8] ;
+		
+		MenuService liste = new ListerPizzaService () ;
+		MenuService ajout = new AjouterPizzaService () ;
+		MenuService modif = new ModifierPizzaService () ;
+		MenuService Suppr = new SupprimerPizzaService () ;
 		
 		
-							// PREMIERE DE PIZZA ORIGINALE
-		listPizza [0] = new Pizza ("PEP" , "pépéroni" , 12.50) ;
-		listPizza [1] = new Pizza ("MAR" , "Margherita" , 14.00) ;
-		listPizza [2] = new Pizza ("REIN" , "La Reine" , 11.50) ;
-		listPizza [3] = new Pizza ("FRC" , "La 4 Fromage" , 12.00) ;
-		listPizza [4] = new Pizza ("CAN" , "La Cannibale" , 12.50) ;
-		listPizza [5] = new Pizza ("SAV" , "La Savoyarde" , 13.00) ;
-		listPizza [6] = new Pizza ("ORI" , "L'Orientale" , 13.50) ;
-		listPizza [7] = new Pizza ("IND" , "L'Indienne" , 14.00) ;
+		
 		
 		
 							// SCANNER QUI PERMET DE RECUPERER LA SAISIE CLAVIER

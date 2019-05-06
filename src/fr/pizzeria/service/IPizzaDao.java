@@ -1,3 +1,4 @@
+package fr.pizzeria.service;
 import fr.pizzeria.model.Pizza;
 
 public interface IPizzaDao {
