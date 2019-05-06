@@ -3,12 +3,12 @@ import fr.pizzeria.model.Pizza;
 public class ListerPizzaService extends MenuService {
 
 	@Override
-	public void executeUC(PizzaMemoDao pizza) {
+	public void executeUC(PizzaMemoDao pizzaDao) {
 		// TODO Auto-generated method stub
 		
-		for ( int i = 0 ; i < pizza.findAllPizzas().length ; i++) {
+		for ( int i = 0 ; i < pizzaDao.findAllPizzas().length ; i++) {
 			
-			System.out.println(pizza.findAllPizzas() [i].id + " _ " + pizza.findAllPizzas() [i].code + " -> " + pizza.findAllPizzas() [i].libelle + " ( " + String.format("%.2f" , pizza.findAllPizzas() [i].prix) + "€ )");
+			System.out.println(pizzaDao.findAllPizzas() [i].id + " _ " + pizzaDao.findAllPizzas() [i].code + " -> " + pizzaDao.findAllPizzas() [i].libelle + " ( " + String.format("%.2f" , pizzaDao.findAllPizzas() [i].prix) + "€ )");
 		
 		}
 		
