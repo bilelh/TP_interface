@@ -11,6 +11,7 @@ public class PizzeriaAdminConsoleApp {
 		
 		Pizza [] listPizza = new Pizza[8] ;
 		
+		
 							// PREMIERE DE PIZZA ORIGINALE
 		listPizza [0] = new Pizza ("PEP" , "pépéroni" , 12.50) ;
 		listPizza [1] = new Pizza ("MAR" , "Margherita" , 14.00) ;
@@ -20,6 +21,7 @@ public class PizzeriaAdminConsoleApp {
 		listPizza [5] = new Pizza ("SAV" , "La Savoyarde" , 13.00) ;
 		listPizza [6] = new Pizza ("ORI" , "L'Orientale" , 13.50) ;
 		listPizza [7] = new Pizza ("IND" , "L'Indienne" , 14.00) ;
+		
 		
 							// SCANNER QUI PERMET DE RECUPERER LA SAISIE CLAVIER
 		Scanner questionUser = new Scanner(System.in);
