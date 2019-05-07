@@ -2,6 +2,7 @@ package fr.pizzeria.console;
 
 import java.util.Scanner;
 
+import fr.pizzeria.factory.MenuServiceFactory;
 import fr.pizzeria.model.Pizza;
 import fr.pizzeria.service.AjouterPizzaService;
 import fr.pizzeria.service.ListerPizzaService;
@@ -17,12 +18,12 @@ public class PizzeriaAdminConsoleApp {
 		
 		
 		PizzaMemoDao pizza = new PizzaMemoDao() ;
-		pizza.initialisation();
+		pizza.initialisation();/*
 		MenuService liste = new ListerPizzaService () ;
 		MenuService ajout = new AjouterPizzaService () ;
 		MenuService modif = new ModifierPizzaService () ;
 		MenuService suppr = new SupprimerPizzaService () ;
-		
+		*/
 		
 		
 							// SCANNER QUI PERMET DE RECUPERER LA SAISIE CLAVIER
@@ -39,52 +40,35 @@ public class PizzeriaAdminConsoleApp {
 		System.out.println("Veuillez faire votre choix");
 		int user_choice = questionUser.nextInt();
 		
-		while (user_choice != 99) {
+		MenuServiceFactory choice = new MenuServiceFactory () ;
 		
-							// CHOIX 1. AFFICHAGE DE LA LISTE DE PIZZAS
-			if (user_choice == 1) {     
-				
-				liste.executeUC(pizza);
-				
-							
-							// CHOIX 2. AJOUT D'UNE PIZZA
-			} else if ( user_choice == 2) { 
-				
-				ajout.executeUC(pizza);
-				
-							// CHOIX 3. MODIFICATION D'UNE PIZZA
-			} else if ( user_choice == 3) {
-				
-				modif.executeUC(pizza);
-				
-							// CHOIX 4. SUPPRESSION D'UNE PIZZA
-			} else if ( user_choice == 4) {
-				
-				suppr.executeUC(pizza);
-				
-							// MESSAGE POUR LE CAS OU L'OPTION SAISIE N'EST PAS DISPONIBLE
-			} else {
-				
-				System.out.println("Je n'ai pas compris, Veuillez recommencer ");
-				
-			}
+		
+		
+		while (user_choice != 99) {
+					
+					// APPEL DE LA FACTORY
+			choice.factory(user_choice).executeUC(pizza) ;
 			
-							// AFFICHAGE DE LA LISTE DES OPTIONS 
+					// AFFICHAGE DE LA LISTE DES OPTIONS 
 			System.out.println("***** Pizzeria Administration *****  ");
 			System.out.println("1. Lister les pizzas  ");
 			System.out.println("2. Ajouter une nouvelle pizza  ");
 			System.out.println("3. Mettre à jour une pizza  ");
 			System.out.println("4. Supprimer une pizza  ");
 			System.out.println("99. Sortir  ");
-			
+					
 			System.out.println("Veuillez faire votre choix");
 			user_choice = questionUser.nextInt();
+		}
+			
+		
+					// MESSAGE DE FIN POUR LE CHOIX 99.
+			System.out.println("Aurevoir !!! ");
 			
 		}
 		
-							// MESSAGE DE FIN POUR LE CHOIX 99.
-		System.out.println("Aurevoir :(  ");
+							
 		
-	}
-
 }
+
+

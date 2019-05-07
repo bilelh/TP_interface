@@ -11,17 +11,13 @@ public class MenuServiceFactory {
 	
 	public MenuService factory (int user_choice) {
 		
-		
-		PizzaMemoDao pizza = new PizzaMemoDao() ;
-		pizza.initialisation();
-		
 		MenuService liste = new ListerPizzaService () ;
 		MenuService ajout = new AjouterPizzaService () ;
 		MenuService modif = new ModifierPizzaService () ;
 		MenuService suppr = new SupprimerPizzaService () ;
 		MenuService choice = null ;
 		
-		while (user_choice != 99) {
+		//while (user_choice != 99) {
 				
 						// CHOIX 1. AFFICHAGE DE LA LISTE DE PIZZAS
 			if (user_choice == 1) {     
@@ -49,7 +45,7 @@ public class MenuServiceFactory {
 			System.out.println("Je n'ai pas compris, Veuillez recommencer ");
 			
 			}
-		}
+		//}
 		return choice ;
 	}
 }
