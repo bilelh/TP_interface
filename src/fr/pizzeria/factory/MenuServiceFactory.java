@@ -40,12 +40,8 @@ public class MenuServiceFactory {
 			choice = suppr ;
 			
 						// MESSAGE POUR LE CAS OU L'OPTION SAISIE N'EST PAS DISPONIBLE
-			} else {
-			
-			System.out.println("Je n'ai pas compris, Veuillez recommencer ");
-			
-			}
-		//}
+			} 
+		
 		return choice ;
 	}
 }
