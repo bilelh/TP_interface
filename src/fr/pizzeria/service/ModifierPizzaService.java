@@ -22,7 +22,7 @@ public class ModifierPizzaService extends MenuService {
 		
 		if (exist = true) {
 			System.out.println("la pizza existe  ");
-			//Pizza newPizz = pizzaDao.findPizzaByCode(modif_code) ;
+			
 			
 			System.out.println("Veuillez saisir le nouveau code:  ");
 			String newCode = questionUser.nextLine();
@@ -32,6 +32,7 @@ public class ModifierPizzaService extends MenuService {
 			
 			System.out.println("Veuillez saisir le nouveau prix (avec une virgule):  ");
 			double newPrix = questionUser.nextDouble();
+			questionUser.nextLine();
 			
 			//Pizza newPizza = new Pizza (newCode , newLibelle , newPrix) ;
 			Pizza newPizza = new Pizza (newCode , newLibelle , newPrix) ;
