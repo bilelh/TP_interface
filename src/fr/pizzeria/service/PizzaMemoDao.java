@@ -10,21 +10,27 @@ public class PizzaMemoDao implements IPizzaDao {
 	
 	public Pizza [] listPizza = new Pizza[8] ;
 	
+	public void initialisation () {
+		
+		listPizza [0] = new Pizza (0 ,"PEP" , "pépéroni" , 12.50) ;
+		listPizza [1] = new Pizza (1 ,"MAR" , "Margherita" , 14.00) ;
+		listPizza [2] = new Pizza (2 ,"REIN" , "La Reine" , 11.50) ;
+		listPizza [3] = new Pizza (3 ,"FRC" , "La 4 Fromage" , 12.00) ;
+		listPizza [4] = new Pizza (4 ,"CAN" , "La Cannibale" , 12.50) ;
+		listPizza [5] = new Pizza (5 ,"SAV" , "La Savoyarde" , 13.00) ;
+		listPizza [6] = new Pizza (6 ,"ORI" , "L'Orientale" , 13.50) ;
+		listPizza [7] = new Pizza (7 ,"IND" , "L'Indienne" , 14.00) ;
+	}
+	
 	
 	public Pizza[] findAllPizzas() {
 		
-		listPizza [0] = new Pizza ("PEP" , "pépéroni" , 12.50) ;
-		listPizza [1] = new Pizza ("MAR" , "Margherita" , 14.00) ;
-		listPizza [2] = new Pizza ("REIN" , "La Reine" , 11.50) ;
-		listPizza [3] = new Pizza ("FRC" , "La 4 Fromage" , 12.00) ;
-		listPizza [4] = new Pizza ("CAN" , "La Cannibale" , 12.50) ;
-		listPizza [5] = new Pizza ("SAV" , "La Savoyarde" , 13.00) ;
-		listPizza [6] = new Pizza ("ORI" , "L'Orientale" , 13.50) ;
-		listPizza [7] = new Pizza ("IND" , "L'Indienne" , 14.00) ;
 		
 		return listPizza ;
 		
 	}
+	public Pizza [] listPizza_2 = listPizza ;
+	
 	public void saveNewPizza(Pizza pizza) {
 		
 		
@@ -44,10 +50,11 @@ public class PizzaMemoDao implements IPizzaDao {
 		for ( int i = 0 ; i < listPizza.length ; i++ ) {
 			if (listPizza [i].code.compareTo(codePizza) == 0) { //pour comparer des String
 				
-				listPizza [i] = new Pizza(i, pizza.code , pizza.libelle , pizza.prix) ;
+				listPizza [i] = pizza ;
 
 			}
 		}
+		
 		
 	}
 	public void deletePizza(String codePizza) {
@@ -76,6 +83,7 @@ public class PizzaMemoDao implements IPizzaDao {
 		
 		
 	}
+	
 	public Pizza findPizzaByCode(String codePizza) {
 		int indice = 0 ;
 		for ( int i = 0 ; i < listPizza.length ; i++ ) {
@@ -87,15 +95,20 @@ public class PizzaMemoDao implements IPizzaDao {
 	}
 	
 	public boolean pizzaExists(String codePizza) {
+		
 		boolean existance = false ;
+		int test = 0;
 		
 		for ( int i = 0 ; i < listPizza.length ; i++ ) {
 			if (listPizza [i].code.compareTo(codePizza) == 0) {
-				existance = true ;
+				test += 1 ;
 			}
 		
-		
 		}
+		if (test == 1) {
+			existance = true ;
+		}
+		
 		return existance ;
 	}
 }

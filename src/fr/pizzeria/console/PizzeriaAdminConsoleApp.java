@@ -17,6 +17,7 @@ public class PizzeriaAdminConsoleApp {
 		
 		
 		PizzaMemoDao pizza = new PizzaMemoDao() ;
+		pizza.initialisation();
 		MenuService liste = new ListerPizzaService () ;
 		MenuService ajout = new AjouterPizzaService () ;
 		MenuService modif = new ModifierPizzaService () ;
