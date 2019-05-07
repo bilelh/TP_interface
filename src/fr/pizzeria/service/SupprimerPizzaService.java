@@ -15,7 +15,7 @@ public class SupprimerPizzaService extends MenuService {
 		
 		
 		System.out.println("Veuillez choisir le code de la pizza à supprimer:  ");
-		questionUser.nextLine();
+		//questionUser.nextLine();
 		String suppr_code = questionUser.nextLine();
 		
 		boolean exist = pizzaDao.pizzaExists(suppr_code) ;

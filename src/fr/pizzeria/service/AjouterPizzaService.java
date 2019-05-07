@@ -14,7 +14,7 @@ public class AjouterPizzaService extends MenuService {
 		System.out.println("Ajout d'une nouvelle pizza  ");
 		
 		System.out.println("Veuillez saisir le code:  ");
-		questionUser.nextLine();
+		//questionUser.nextLine();
 		String newCode = questionUser.nextLine();
 		
 		System.out.println("Veuillez saisir le nom (sans espace):  ");
@@ -22,8 +22,10 @@ public class AjouterPizzaService extends MenuService {
 		
 		System.out.println("Veuillez saisir le prix (avec une virgule):  ");
 		double newPrix = questionUser.nextDouble();
+		questionUser.nextLine();
 		
 		Pizza newPizza = new Pizza (newCode , newLibelle , newPrix) ;
+		
 		pizzaDao.saveNewPizza(newPizza);
 		
 		

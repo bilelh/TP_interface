@@ -14,7 +14,7 @@ public class ModifierPizzaService extends MenuService {
 		System.out.println("Mise à jour d'une pizza  ");
 		
 		System.out.println("Veuillez choisir le code de la pizza à modifier:  ");
-		questionUser.nextLine();
+		//questionUser.nextLine();
 		String modif_code = questionUser.nextLine();
 		
 		
