@@ -21,10 +21,12 @@ public class SupprimerPizzaService extends MenuService {
 		boolean exist = pizzaDao.pizzaExists(suppr_code) ;
 		
 		
-		if (exist = true) {
+		if (exist == true) {
 		
 			pizzaDao.deletePizza(suppr_code);
 		
+		}else {
+			System.out.println("la pizza n'existe pas  ");
 		}
 		
 	}
